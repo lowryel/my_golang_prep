@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-
+	"time"
+    "strconv"
 	// "golang.org/x/text/cases"
-	// "time"
 )
 
 // func main() {
@@ -74,6 +74,58 @@ func main() {
     fmt.Printf("hello yadayada...\n")
     // calculator(4,0)
     case_switch()
+    num_array(4,5,6,8,9)
+    // times_table(12)
+    D_array()
+}
+
+
+
+func D_array() {
+    var table [5][6]string
+    for row := 0; row<5; row++ {
+        for col := 0;col<6; col++{
+            table[row][col] = strconv.Itoa(row) + "," + strconv.Itoa(col)
+        }
+    }
+    fmt.Println(len(table))
+}
+
+
+
+func times_table(n int) {
+    Outerloop:
+        for i :=1; i<=n; i++ {
+            for j :=1; j<=n; j++ {
+                if i>=3 {
+                    break Outerloop
+                }
+                fmt.Printf("%d * %d = %d\n", i, j, i*j)
+            }
+            fmt.Println("-------------------------------------")
+            fmt.Println(time.Now().Date())
+        }
+}
+
+func num_array(nums ... int) []int {
+    // var nums [5]int
+    // nums[0] = 4
+    // nums[1] = 8
+    // nums[2] = 6
+    // nums[3] = 10
+    labels:
+        for k, v := range nums {
+            // fmt.Println(v)
+            if v == 0{
+                break labels
+            }
+            // break labels
+
+            if v%2==0 {
+                fmt.Printf("The num %d at index %d is even!\n", v, k)
+            }
+        }
+        return nil
 }
 
 
@@ -96,7 +148,7 @@ func main() {
 // }
 
 
-func case_switch()string{
+func case_switch() string{
     num := 4
     dayofWeek := ""
     switch num {

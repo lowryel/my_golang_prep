@@ -19,7 +19,6 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
-
     // A slice of names.
     names := []string{"Gladys", "Samantha", "Darrin"}
 
@@ -30,7 +29,6 @@ func main() {
 	}
 
 	fmt.Println(messages)
-
 	computation := greetings.Sum(5897,5)
 	fmt.Println(computation)
 	avoid(47,15)

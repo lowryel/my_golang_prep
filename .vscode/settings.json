@@ -1,0 +1,10 @@
+{
+    "terminal.integrated.splitCwd": "inherited",
+    "editor.wordWrap": "bounded",
+    "workbench.editor.wrapTabs": true,
+    "editor.wordWrapColumn": 100,
+    "diffEditor.wordWrap": "inherit",
+    "files.autoSave": "afterDelay",
+    "editor.cursorStyle": "underline",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
+}
