@@ -66,9 +66,3 @@ func fibbo () int {
 	return b
 }
 
-
-
-
-
-
-

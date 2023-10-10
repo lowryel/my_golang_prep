@@ -22,16 +22,48 @@ type points struct{
 	z float32
 }
 
+type arrayStruct struct {
+	key string
+	value int
+}
+
+type kvPair []arrayStruct
+var heights map[string]int
+
 
 func main() {
 	p()	
 	areaofa :=areaOfSquare(21, 20)
 	fmt.Println(areaofa.instance())
+	areaofa.add1(4, 6)
+	fmt.Println(*areaofa)
+	compareStructs()
+	mapMethods()
+	structure()
 }
+
+
+func structure() {
+	heights := make(map[string]int)
+	heights["Janice"] = 174
+	heights["James"] = 180
+	heights["Jane"] = 172
+	fmt.Println(heights)
+	p := make(kvPair, len(heights))
+	fmt.Println(p)
+	h := kvPair{}
+	h.Heights()
+}
+
+func (kv kvPair) Heights() {
+	fmt.Printf("%T\n", kv)
+}
+
 
 func p() *person {
 	// new_p := make([]int, 5)
 	per := person{"Eugene", 25, Gender{A:"Male", B: "Female"}}
+
 	fmt.Println(per.name, per.age, per.gender.A)
 	per1 := &per
 	fmt.Println(per1.name)
@@ -76,14 +108,55 @@ type area struct{
 	a int
 	b int
 }
+func compareStructs() {
+	area1 :=area{
+		a:8,
+		b:5,
+	}
+	area2 :=area{
+		a:8,
+		b:3,
+	}
+	fmt.Println(area1==area2)
+}
 
 func (p area) instance() int{
 	square:=p.a * p.b
 	return square
 }
 
+
+
 func areaOfSquare(a, b int) *area{
 	area_of_square :=area{ a:a, b:b }
 	fmt.Println(area_of_square)
 	return &area_of_square
 }
+
+func (c *area) add1(d, e int){
+	c.a += d
+	c.b += e
+}
+
+
+// when working with maps, you first have to define and initialze with a variable
+// e.g
+func mapMethods() {
+	heights := make(map[string]int)
+	heights["Eugene"] = 174
+	heights["Abena"] = 171
+	heights["Edem"] = 172
+	heights["Thiel"] = 174
+	fmt.Println(heights)
+	var list []int
+	for _, ok := range heights {
+		list = append(list, ok)
+		// fmt.Println("Height in meters(m) is:", list)
+	}
+	fmt.Println(list)
+}
+
+
+
+
+
