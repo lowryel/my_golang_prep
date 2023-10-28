@@ -1,0 +1,6 @@
+go 1.21.3
+
+use ./vanilla_go_wsocket
+
+use ./initial
+use ./Interfaces

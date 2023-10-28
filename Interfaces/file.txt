@@ -1,0 +1,1 @@
+To create a Go client for the Vonage SMS API (formerly known as Nexmo), you'll need to make HTTP requests to the Vonage API endpoints. You can use the standard net/http package in Go to do this. Here's a basic example of how you can send an SMS message using the Vonage API:
